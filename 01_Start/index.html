@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <title>01_Start</title>
+    <script src="jquery-3.6.1.js"></script>
+    <style>
+      body{
+        margin: 0,0,0,0;
+        padding: 0,0,0,0;
+      }
+
+     div{
+        margin: 10% 35% 0 35%;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>Farbe ändern</h1>
+      <button type="button" name="rot" id="rot">Rot</button>
+      <button type="button" name="blau" id="blau">Blau</button>
+      <button type="button" name="grün" id="gruen">Grün</button>
+      <button type="button" name="gelb" id="gelb">Gelb</button>
+    </div>
+    <div>
+      <h1>Schriftgröße ändern</h1>
+      <button type="button" name="winzig" id="winzig">Winzig</button>
+      <button type="button" name="klein" id="klein">Klein</button>
+      <button type="button" name="normal" id="normal">Normal</button>
+      <button type="button" name="groß" id="groß">Groß</button>
+    </div>
+    <div>
+      <h1>Rahmen festlegen</h1>
+      <button type="button" name="r1" id="r1">Rahmen 1</button>
+      <button type="button" name="r2" id="r2">Rahmen 2</button>
+      <button type="button" name="r3" id="r3">Rahmen 3</button>
+      <button type="button" name="r4" id="r4">Rahmen 4</button>
+    </div>
+
+
+
+   <div class="veraenderung">
+      <p>Ich bin eine Änderung</p>
+    </div>
+
+
+
+   <script type="text/javascript">
+      $(document).ready(function(){
+
+        /* Farbe ändern*/
+        $("#rot").click(function(){
+          $(".veraenderung").css("color","red");
+        });
+        $("#blau").click(function(){
+          $(".veraenderung").css("color","blue");
+        });
+        $("#gruen").click(function(){
+          $(".veraenderung").css("color","green");
+        });
+        $("#gelb").click(function(){
+          $(".veraenderung").css("color","yellow");
+        });
+
+        /*Größe ändern*/
+        $("#winzig").click(function(){
+          $(".veraenderung").css("font-size","5px");
+        });
+        $("#klein").click(function(){
+          $(".veraenderung").css("font-size","10px");
+        });
+        $("#normal").click(function(){
+          $(".veraenderung").css("font-size","15px");
+        });
+        $("#groß").click(function(){
+          $(".veraenderung").css("font-size","25px");
+        });
+        $("#groß").click(function(){
+          $(".veraenderung").css("font-size","25px");
+        });
+
+        /*Border ändern*/
+        $("#r1").click(function(){
+          $(".veraenderung").css({"padding":"25% 0 25% 0","border-style":"dashed"});
+        });
+        $("#r2").click(function(){
+          $(".veraenderung").css({"padding":"25% 25% 25% 25%","border-style":"dashed"});
+        });
+        $("#r3").click(function(){
+          $(".veraenderung").css({"padding-top":"25%","border-style":"outset", "border-width":"55px"});
+        });
+        $("#r4").click(function(){
+          $(".veraenderung").css({"padding-top":"25%","border-style":"dashed"});
+        });
+      });
+    </script>
+  </body>
+</html>

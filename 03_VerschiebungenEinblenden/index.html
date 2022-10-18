@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <title>03_VerschiebungenEinblenden</title>
+    <script src="jquery-3.6.1.js"></script>
+    <style>
+      .picture{
+        display: none;
+        height: 550px;
+        width: 150px;
+      }
+      .header{
+        text-align: center;
+        padding: 5% 20% 5% 20%;
+        background-color: #888888;
+        border-style: dotted;
+        border-width: 2px;
+        height: 50px;
+        width: 150px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      Der Pelzigen Freund des Tages anzeigen
+    </div>
+    <div class="picture">
+      <img src="Animation.jpg" alt="Hund des Tages" width="150">
+    </div>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $(".header").click(function(){
+          $(".picture").slideDown(1000);
+        });
+        $(".picture").click(function(){
+          $(".picture").fadeOut(1000);
+        });
+      });
+    </script>
+  </body>
+</html>

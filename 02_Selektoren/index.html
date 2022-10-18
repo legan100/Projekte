@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>02_Selektoren</title>
+    <script src="jquery-3.6.1.js"></script>
+    <style>
+      main{
+        margin: 10% 35% 0 35%;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="buttons">
+        <button type="button" name="odd" id="odd">Gerade</button>
+        <button type="button" name="even" id="even">Ungerade</button>
+      </div>
+      <ol>
+        <li>Unterschiedliche Möglichkeiten für Selektoren</li>
+        <li>Unterschiedliche Möglichkeiten für Selektoren</li>
+        <li>Unterschiedliche Möglichkeiten für Selektoren</li>
+        <li>Unterschiedliche Möglichkeiten für Selektoren</li>
+      </ol>
+    </main>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+
+        alert("Document.ready");
+        $("#odd").click(function(){
+          $("li:odd").html("Das sind gerade Listeneinträge");
+          $("li:even").html("Unterschiedliche Möglichkeiten für Selektoren");
+        });
+        $("#even").click(function(){
+          $("li:even").html("Das sind ungerade Listeneinträge");
+          $("li:odd").html("Unterschiedliche Möglichkeiten für Selektoren");
+        });
+      });
+    </script>
+  </body>
+</html>

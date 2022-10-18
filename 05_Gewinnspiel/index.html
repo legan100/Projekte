@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>05_Gewinnspiel</title>
+    <script src="jquery-3.6.1.js"></script>
+    <style>
+      div{
+        float: left;
+        border-style: solid;
+        border-width: 3px;
+      }
+      .whole{
+        margin: 10% 20% 0 20%;
+        height: 500px;
+        background-color: gray;
+        width: 700px;
+      }
+
+      .bild{
+        margin: 0 0 0 0;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="whole">
+        <h2>Gewinnspiel</h2>
+      Klicken Sie auf eines der Bilder. In einem Bild verbirgt sich ein Gewinn.
+      <div>
+        <div class="bild">
+          <img src="assets/bild1.jpg" alt="" height="150px">
+        </div>
+        <div class="bild">
+          <img src="assets/bild2.jpg" alt="" height="150px">
+        </div>
+        <div class="bild">
+          <img src="assets/bild3.jpg" alt="" height="150px">
+        </div>
+      </div>
+      <div>
+        <div class="bild">
+          <img src="assets/bild4.jpg" alt="" height="150px">
+        </div>
+        <div class="bild">
+          <img src="assets/bild5.jpg" alt="" height="150px">
+        </div>
+        <div class="bild">
+          <img src="assets/bild6.jpg" alt="" height="150px">
+        </div>
+      </div>
+    </div>
+    <script>
+
+      $(document).ready(function(){
+
+        gewinnverstecken();
+        function zufallszahl_erzeugen(maxZufallszahl){
+          var zufallszahl = Math.floor((Math.random()) * maxZufallszahl);
+          alert(zufallszahl);
+          return zufallszahl;
+        }
+
+        function gewinnverstecken(){
+          var meine_zahl = zufallszahl_erzeugen(0,6);
+          $(".bild").each(function(index) {
+            if(meine_zahl == index){
+              $(this).append("<span id='Gewinn'></span>");
+              return false;
+            }
+
+          });
+
+        }
+
+        $(".bild").click(function(){
+          if(($.contains(this, document.getElementById("Gewinn"))==index)){
+            alert("1");
+          }else{
+            alert("2");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

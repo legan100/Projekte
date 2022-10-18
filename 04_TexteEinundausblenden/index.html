@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>04_TexteEinUndAusblenden</title>
+    <script src="jquery-3.6.1.js"></script>
+    <style>
+      body{
+        float:left;
+      }
+      .main{
+        background-color: blue;
+        width: 650px;
+        height:250px;
+        border-style: solid;
+        border-width: 3px;
+        padding: 0 0 0 0;
+        color: white;
+
+      }
+
+      main{
+        background-color: #975cbe;
+      }
+
+      .ratespiel{
+        border-style: dotted;
+        border-width: medium;
+      }
+
+      /*
+        Überschrift
+      */
+      #kopfteil{
+
+      }
+    </style>
+  </head>
+  <body>
+    <div id="kopfteil">
+      <h1>Rabattaktion</h1>
+    </div>
+    <div id="hauptteil">
+      <div class="ratespiel">
+        <img src="assets/bild1.jpg" width="150px">
+      </div>
+      <div class="ratespiel">
+        <img src="assets/bild2.jpg" width="150px">
+      </div>
+      <div class="ratespiel">
+        <img src="assets/bild4.jpg" width="150px">
+      </div>
+      <div class="ratespiel">
+        <img src="assets/bild5.jpg" width="150px">
+      </div>
+    </div>
+    <script>
+      $(document).ready(function(){
+        $("ratespiel").click(function(){
+          $("span").remove();
+          let zufallszahl = Math.floor((Math.random()*5) + 5);
+          $(this).append("<span>Der Rabatt für das Bild beträgt " + zufallszahl + "%.<span>");
+
+        });
+      });
+    </script>
+  </body>
+</html>
