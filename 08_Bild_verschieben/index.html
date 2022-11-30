@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08_Bild_verschieben</title>
+    <script src="jquery-3.6.1.js"></script>
+    <style>
+        body{
+            background-color: darkcyan;
+        }
+        #headline{
+            color: greenyellow;
+            font-size: 30px;
+        }
+        .underline {
+            color: black;
+            font-size: larger;
+        }
+
+        .bilder{
+            margin-top: 50px;
+            z-index: 0;
+        }
+        
+        #kopf{
+            position: absolute;
+            top: 134px;
+            left: 80px;
+            right: 1050px;
+            overflow: hidden;
+        }
+
+        #auge{
+            position: absolute;
+            top: 369px;
+            left: 80px;
+            right: 1050px;
+            overflow: hidden;
+        }
+        #nase{
+            position: absolute;
+            top: 468px;
+            left: 80px;
+            right: 1050px;
+            overflow: hidden;
+        }
+        #mund{
+            position: absolute;
+            top: 551px;
+            left: 80px;
+            right: 1050px;
+            overflow: hidden;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="gesammt">
+        <div id="headline">
+            Fahndungsfoto erstellen
+        </div>
+        <div class="underline">
+            Klicken Sie auf den Bereich, welcher geändert werden soll.
+        </div>
+        
+        <div id="fahndung">
+            <div id="rahmen">
+                <img src="assets/rahmen1.png">
+            </div>     
+            <div id="kopf">
+                <img src="assets/kopf1.jpg" alt="">
+            </div>
+            <div id="auge">
+                <img src="assets/auge1.jpg" alt="">
+            </div>
+            <div id="nase">
+                <img src="assets/nase1.jpg" alt="">
+            </div>
+            <div id="mund">
+                <img src="assets/mund1.jpg" alt="">
+            </div>-->    
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            var kopf = [0,0,0,0]
+            var kopfklicks = 0, augenklicks = 0, nasenklicks = 0, mundklicks = 0;
+            $("#kopf").click(function(){
+                if (kopf[0] < 8){
+                    $("#kopf").animate({left:"-=392px"},500);
+                    kopf[0]+=1;
+                }else{
+                    $("#kopf").animate({left:"0px"},500);
+                    kopf[0] = 0;
+                }
+            });
+            
+            $("#auge").click(function(){
+                if (kopf[1] < 8){
+                    $("#auge").animate({left:"-=392px"},500);
+                    kopf[1]+=1;
+                }else{
+                    $("#auge").animate({left:"0px"},500);
+                    kopf[1] = 0;
+                }
+            });
+            
+            $("#nase").click(function(){
+                if (kopf[2] < 8){
+                    $("#nase").animate({left:"-=392px"},500);
+                    kopf[2]+=1;
+                }else{
+                    $("#nase").animate({left:"0px"},500);
+                    kopf[2] = 0;
+                }
+            });
+            
+            $("#mund").click(function(){
+                if (kopf[3] < 8){
+                    $("#mund").animate({left:"-=392px"},500);
+                    kopf[3]+=1;
+                }else{
+                    $("#mund").animate({left:"0px"},500);
+                    kopf[3] = 0;
+                }
+            });
+            
+        });
+        
+    </script>
+</body>
+</html>
