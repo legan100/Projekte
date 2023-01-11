@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>09_Kalender</title>
+        <script src="jquery-3.6.1.js"></script>
+        <style>
+            table{
+                border: 1px solid;
+            }
+            .gelb{
+                background-color: yellow;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+        </table>
+        <script>
+            $(document).ready(function(){
+
+                var Tag;
+                var Monat;
+                var Jahr;
+                var Wochentag;
+                var heute = new Date();
+                Tag = heute.getDate();
+                Monat = heute.getDate();
+                Jahr = heute.getFullYear();
+                Wochentag = heute.getDate();
+                
+                var beginnMonat = new Date(Jahr, Monat, 1);
+                alert(beginnMonatTag);
+                var beginnMonatTag = beginnMonat.getDate();
+
+                tage();
+                function tage(){
+                    $("table").append("<tr><th>Mo</th><th>DI</th><th>MI</th><th>DO</th><th>FR</th><th>SA</th><th>SO</th></tr>");
+                }
+                
+                
+                for(var j =0;j < 6;j++){
+                    $("table").append("<tr class='gelb'><tr>");
+                }
+
+                for(var i = 0; i<7; i++){
+                    $(".gelb").append("<td></td>");
+                }
+
+                beginn();
+                function beginn(){
+                    for(var z = 0 ; z <=42; z++){
+                        var test = new Date(Jahr,Monat,i-beginnMonatTag+2);
+                        $("td").eq(i).append(test.getDate());
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+   <head>
+   <meta charset="utf-8">
+      <title>Datum</title>
+      <style type="text/css">
+       .tab {font-size:16px;}
+	   .header {background:gray; color:white}
+	  .hellgrau {background:lightgray;}
+	  .aktuell{color:red; font-weight:bold; border:1px solid black}
+      </style>
+	  <script type="text/javascript" src="jquery-3.6.1.js"></script>
+		
+   </head>
+   <body>
+     
+         <h1>Datum</h1>
+        <table class="tab"></table>
+		<script type="text/javascript">
+		$(document).ready(function(){
+		var Tag; 
+		var Monat;
+		var Jahr;
+		var beginnMonatTag;
+		
+		var heute = new Date();
+		Tag= heute.getDate();
+		Monat= heute.getMonth();
+		Jahr= heute.getFullYear();
+		beginnMonatTag= heute.getFullYear();
+		var Wochentag=heute.getDay()
+		
+		
+		var beginnMonat= new Date(Jahr,Monat,1)
+		
+		beginnMonatTag=beginnMonat.getDay();
+		if (beginnMonatTag==0)beginnMonatTag=7
+	
+		tage();
+		function tage() {
+		$("table").append($("<tr><th>Mo</th><th>Di</th><th>Mi</th><th>Do</th><th>Fr</th><th>Sa</th><th>So</th></tr>"));
+		for (var j=0; j<6; j++){
+		//Nach der Tabellenüberschrift werden Zeilen eingefügt- Insgesamt sollen sechs Zeilen eingefügt werden
+		//Das Einfügen fplgt mit Hilfe einer Funktion
+		//zeile();
+		$("table").append($("<tr class='gelb'></tr>"));}
+		for (var i=0; i<7; i++){
+		$(".gelb").append($("<td></td>"));	
+		}
+		beginn();
+		}
+		function beginn (){
+		for (var i=0; i<42; i++){
+		$("td").eq(i).append(new Date(Jahr,Monat,i-beginnMonatTag+2).getDate())}
+		}
+		//Formatieren der Zellen
+		$("th").addClass("header");
+		$("tr:odd").addClass("hellgrau");
+		$("td").slice(0,beginnMonatTag-1).css("opacity","0.3");
+		$("td").eq(Tag+beginnMonatTag-2).addClass("aktuell");
+		for (i=28;i<42;i++){
+		if ($("td").eq(i).html()<15)
+		$("td").eq(i).css("opacity","0.3");
+		}
+		});
+		
+		</script>
+      <div>
+      
+      </div>
+      
+   </body>
+</html>
