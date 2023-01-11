@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10_Kalender</title>
+    <script src="../assets/jquery-3.6.1.js"></script>
+    <style>
+        #border{
+            border: 2px #0E813C solid;
+            width: 70%;
+            height: 60%;
+        }
+
+        #playarea{
+            background-color: white;
+            width: 180px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        $(document).ready(function(){
+            function schueler(vorname, nachname, alter){
+                this.vorname =vorname;
+                this.nachname = nachname;
+                this.alter = alter;
+            }
+
+            var schueler1 = [
+                new schueler("Sergio", "Angili", "20"),
+                new schueler("nico", "Nagel", "20")
+            ];
+
+            alert(schu)
+        });
+    </script>
+    <div id="border">
+        <div id="playarea">
+
+        </div>
+        <div id="buttons">
+
+
+        </div>
+    </div>
+</body>
+</html>
